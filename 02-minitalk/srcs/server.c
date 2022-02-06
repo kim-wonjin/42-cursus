@@ -6,25 +6,11 @@
 /*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:44:44 by wokim             #+#    #+#             */
-/*   Updated: 2022/02/06 21:48:56 by kim-wonjin       ###   ########.fr       */
+/*   Updated: 2022/02/07 04:49:00 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/minitalk.h"
-
-int	calcLen(int ascii, int num)
-{
-	if (ascii == 5)
-	{
-		if (num >= 240)
-			return (4);
-		else if (num >= 224)
-			return (3);
-		else if (num >= 192)
-			return (2);
-	}
-	return (1);
-}
 
 void	endLine(int id)
 {
@@ -36,23 +22,20 @@ void	handler(int signo, siginfo_t *info, void *context)
 {
 	static int		num;
 	static int		ascii;
-	static int		len;
 
 	(void)info;
 	(void)context;
-	len = 1;
-	if (ascii < 8 * len)
+	if (ascii < 8)
 	{
 		num = num << 1;
 		if (signo == SIGUSR1)
 			num = num | 1;
-		len = calcLen(ascii, num);
 		ascii++;
 	}
-	if (ascii >= 8 * len)
+	if (ascii >= 8)
 	{
 		if (num != 255)
-			write(1, &num, len);
+			write(1, &num, 1);
 		else
 			endLine(info->si_pid);
 		num = 0;
@@ -77,6 +60,6 @@ int	main(void)
 	sigaction(SIGUSR1, &sigact, NULL);
 	sigaction(SIGUSR2, &sigact, NULL);
 	while (1)
-		;
+		pause();
 	return (0);
 }

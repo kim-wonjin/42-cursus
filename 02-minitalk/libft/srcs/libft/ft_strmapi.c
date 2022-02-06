@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 16:45:33 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/19 20:03:51 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 00:56:02 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s)
 		return (NULL);
 	len = ft_strlen(s);
-	if (!(result = (char *)malloc(len + 1)))
+	result = (char *)malloc(len + 1);
+	if (!result)
 		return (0);
 	i = 0;
 	while (len--)

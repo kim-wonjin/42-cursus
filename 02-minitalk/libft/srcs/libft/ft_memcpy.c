@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 17:26:15 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/19 13:39:55 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 00:51:59 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char		*p1;
-	const unsigned char *p2;
+	const unsigned char	*p2;
 
 	p1 = dst;
 	p2 = src;

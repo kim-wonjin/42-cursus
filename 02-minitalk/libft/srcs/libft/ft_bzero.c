@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 17:09:30 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/05 17:48:08 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 00:51:11 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *p;
+	unsigned char	*p;
 
 	p = s;
 	while (n-- > 0)

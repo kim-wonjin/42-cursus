@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 04:01:40 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/19 21:33:01 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 00:55:43 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	if (n == 0)
 		return (0);

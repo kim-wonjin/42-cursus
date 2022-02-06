@@ -6,7 +6,7 @@
 #    By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/06 21:03:09 by kim-wonjin        #+#    #+#              #
-#    Updated: 2022/02/06 21:45:19 by kim-wonjin       ###   ########.fr        #
+#    Updated: 2022/02/07 03:42:21 by kim-wonjin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ LIB_NAME	=	libft.a
 LIB		=	$(addprefix $(LIB_DIR), $(LIB_NAME))
 
 # HEADERS
-INCS_DIR	=	./incs/
+INCS_DIR	=	./incs/minitalk.h
 
 # SOURCES
 SRCS_SERVER	=	./srcs/server.c 
@@ -52,7 +52,6 @@ $(NAME) : $(NAME_CLIENT) $(NAME_SERVER)
 
 $(LIB_NAME) :
 	@make -C $(LIB_DIR)
-	@printf "${FG_GREEN}Libft make all succeeded!\n${NO_COLOR}"
 
 $(NAME_SERVER) : $(SRCS_SERVER) $(LIB)
 	@$(CC) $(CFLAGS) $^ -o $@

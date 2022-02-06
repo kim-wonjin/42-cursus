@@ -6,7 +6,7 @@
 /*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 04:36:45 by wokim             #+#    #+#             */
-/*   Updated: 2022/02/06 21:48:52 by kim-wonjin       ###   ########.fr       */
+/*   Updated: 2022/02/07 04:44:37 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,16 @@ void	sigtest(char *pid, char *str)
 	}
 	sendbitnum(id, 255);
 	return ;
-
 }
 
 void	success_ack(int signo)
 {
-	(void)signo;
-	write(1, "ACK SUCCESS!\n", 14);
+	if (signo == SIGUSR1)
+		write(1, "ACK SUCCESS!\n", 14);
 	exit(0);
 }
 
-int 	main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	signal(SIGUSR1, success_ack);
 	if (argc != 3)
@@ -77,4 +76,3 @@ int 	main(int argc, char *argv[])
 	write(1, "over 1sec\n", 10);
 	return (0);
 }
-

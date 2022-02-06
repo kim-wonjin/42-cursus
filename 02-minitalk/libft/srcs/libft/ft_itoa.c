@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 15:34:18 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/17 17:07:24 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 01:13:02 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	rec(int n)
 		return (1 + rec(n / 10));
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char			*result;
 	int				len;
@@ -34,13 +34,17 @@ char		*ft_itoa(int n)
 	}
 	else
 		tmp = n;
-	if (!(result = (char *)malloc(len + 1)))
+	result = (char *)malloc(len + 1);
+	if (!result)
 		return (0);
 	result[len--] = '\0';
-	if (n < 0)
-		result[0] = '-';
+	result[0] = '-';
 	result[len--] = tmp % 10 + '0';
-	while (tmp /= 10)
+	tmp /= 10;
+	while (tmp)
+	{
 		result[len--] = tmp % 10 + '0';
+		tmp /= 10;
+	}
 	return (result);
 }

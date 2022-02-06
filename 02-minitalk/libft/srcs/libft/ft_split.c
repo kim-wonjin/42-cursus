@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 03:02:07 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/19 20:02:26 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 01:10:34 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	word_count(char const *s, char c)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	while (*s)
@@ -31,7 +31,7 @@ static size_t	word_count(char const *s, char c)
 	return (count);
 }
 
-static char		**free_result(char **result, int i)
+static char	**free_result(char **result, int i)
 {
 	while (i--)
 	{
@@ -43,7 +43,7 @@ static char		**free_result(char **result, int i)
 	return (0);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	size_t	i;
@@ -51,8 +51,7 @@ char			**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	if (!(result = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1))))
-		return (0);
+	result = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
 	i = 0;
 	while (*s)
 	{
@@ -61,7 +60,8 @@ char			**ft_split(char const *s, char c)
 			p = (char *)s;
 			while (*s != c && *s)
 				s++;
-			if (!(result[i] = (char *)malloc(s - p + 1)))
+			result[i] = (char *)malloc(s - p + 1);
+			if (!result[i])
 				return (free_result(result, i - 1));
 			ft_strlcpy(result[i++], p, s - p + 1);
 		}

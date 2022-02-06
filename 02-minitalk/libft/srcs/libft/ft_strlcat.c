@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 20:55:23 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/19 16:59:03 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 00:57:09 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t destlen;
-	size_t srclen;
+	size_t	destlen;
+	size_t	srclen;
 
 	srclen = ft_strlen(src);
-	if ((destlen = ft_strlen(dst)) > dstsize)
+	destlen = ft_strlen(dst);
+	if (destlen > dstsize)
 		destlen = dstsize;
 	if (destlen == dstsize)
 		return (dstsize + srclen);

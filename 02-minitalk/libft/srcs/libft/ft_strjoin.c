@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 17:43:39 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/19 19:37:35 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 00:51:38 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(result = (char *)malloc(len + 1)))
+	result = (char *)malloc(len + 1);
+	if (!result)
 		return (0);
 	ft_strlcpy(result, s1, ft_strlen(s1) + 1);
 	ft_strlcat(result, s2, len + 1);

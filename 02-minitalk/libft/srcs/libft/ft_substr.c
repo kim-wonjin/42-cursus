@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 17:38:52 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/20 18:16:04 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 00:55:23 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *result;
+	char	*result;
 
 	if (!s)
 		return (NULL);
@@ -22,7 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (ft_strlen(s) < len)
 		len = ft_strlen(s);
-	if (!(result = (char *)malloc(len + 1)))
+	result = (char *)malloc(len + 1);
+	if (!result)
 		return (0);
 	ft_memcpy(result, s + start, len);
 	result[len] = '\0';

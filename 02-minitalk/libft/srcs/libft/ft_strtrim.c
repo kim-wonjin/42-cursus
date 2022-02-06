@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 18:39:16 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/19 20:03:15 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 00:56:21 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen(s1);
 	while (s1[len - 1] && ft_strchr(set, s1[len - 1]) && len)
 		len--;
-	if (!(result = (char *)malloc(len + 1)))
+	result = (char *)malloc(len + 1);
+	if (!result)
 		return (0);
 	ft_memcpy(result, s1, len);
 	result[len] = '\0';

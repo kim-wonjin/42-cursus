@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 19:18:35 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/07 20:16:45 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 00:56:34 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char		*p1;
-	const unsigned char *p2;
+	const unsigned char	*p2;
 
 	p1 = dst;
 	p2 = src;

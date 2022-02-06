@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wokim <wokim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 05:16:04 by wokim             #+#    #+#             */
-/*   Updated: 2021/05/19 13:43:43 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/07 00:50:53 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	rec(int fd, int n)
 {
-	char nb;
+	char	nb;
 
 	if (n / 10)
 		rec(fd, n / 10);
@@ -22,7 +22,7 @@ static void	rec(int fd, int n)
 	write(fd, &nb, 1);
 }
 
-void		ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);

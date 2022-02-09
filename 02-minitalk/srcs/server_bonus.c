@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:44:44 by wokim             #+#    #+#             */
-/*   Updated: 2022/02/09 14:57:28 by wokim            ###   ########.fr       */
+/*   Updated: 2022/02/09 14:37:31 by wokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/minitalk.h"
+#include "../incs/minitalk_bonus.h"
 
 void	endLine(int id)
 {
@@ -23,6 +23,7 @@ void	handler(int signo, siginfo_t *info, void *context)
 	static int		num;
 	static int		ascii;
 
+	(void)info;
 	(void)context;
 	if (ascii < 8)
 	{

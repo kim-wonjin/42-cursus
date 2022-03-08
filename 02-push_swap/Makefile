@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wokim <wokim@student.42.fr>                +#+  +:+       +#+         #
+#    By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 16:27:38 by wokim             #+#    #+#              #
-#    Updated: 2022/03/07 16:27:38 by wokim            ###   ########.fr        #
+#    Updated: 2022/03/09 02:38:20 by kim-wonjin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ BSRCS		= ./bonus/srcs/main.c \
 			./bonus/srcs/parsing/util.c \
 			./bonus/srcs/operations/op_swap_push.c \
 			./bonus/srcs/operations/op_rotate.c \
-			./bonussrcs/operations/op_reverse_rotate.c \
+			./bonus/srcs/operations/op_reverse_rotate.c \
 			./bonus/srcs/gnl/get_next_line_bonus.c \
 			./bonus/srcs/gnl/get_next_line_utils_bonus.c
 

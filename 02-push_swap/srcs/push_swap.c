@@ -6,7 +6,7 @@
 /*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 01:04:33 by wokim             #+#    #+#             */
-/*   Updated: 2022/03/09 03:56:24 by kim-wonjin       ###   ########.fr       */
+/*   Updated: 2022/03/10 14:03:41 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,5 @@ int	main(int argc, char *argv[])
 	ft_array_sort(array, array_size, 0);
 	stack->array = (int *)array;
 	ft_sort(stack);
-	free(array);
-	free(stack);
 	return (0);
 }

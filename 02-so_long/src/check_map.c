@@ -6,7 +6,7 @@
 /*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:47:27 by wokim             #+#    #+#             */
-/*   Updated: 2022/04/08 21:28:49 by kim-wonjin       ###   ########.fr       */
+/*   Updated: 2022/04/15 12:39:27 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	check_validate_map(t_game *game, char *line, int flag)
 		if (line[i] != '1' && line[i] != '0' && line[i] != 'P' && \
 		line[i] != 'C' && line[i] != 'E')
 			close_game(-1, game);
-		if ((i == 0 || i == len) && line[i] != '1')
+		if ((i == 0 || i == len - 1) && line[i] != '1')
 			close_game(-1, game);
 		if (len != game->width)
 			close_game(-1, game);

@@ -15,3 +15,5 @@
 | 02     | [minitalk](https://github.com/kim-wonjin/42-cursus/tree/main/02-minitalk) | `IPC` | OS | C | [![wokim's 42 minitalk Score](https://badge42.vercel.app/api/v2/cl1t3vx8q002509mdnqcsm6lg/project/2412843)](https://github.com/JaeSeoKim/badge42) |
 | 02     | [push_swap](https://github.com/kim-wonjin/42-cursus/tree/main/02-push_swap) | `Complexity` | ALG | C | [![wokim's 42 push_swap Score](https://badge42.vercel.app/api/v2/cl1t3vx8q002509mdnqcsm6lg/project/2334083)](https://github.com/JaeSeoKim/badge42) |
 | 02     | [so_long](https://github.com/kim-wonjin/42-cursus/tree/main/02-so_long) | `MiniLibX` | CG | C | [![wokim's 42 so_long Score](https://badge42.vercel.app/api/v2/cl1t3vx8q002509mdnqcsm6lg/project/2546389)](https://github.com/JaeSeoKim/badge42) |
+| 03     | [Philosophers](https://github.com/kim-wonjin/42-cursus/tree/main/03-Philosophers) | `Synchronization` | OS | C | [![wokim's 42 Philosophers Score](https://badge42.vercel.app/api/v2/cl1t3vx8q002509mdnqcsm6lg/project/2561647)](https://github.com/JaeSeoKim/badge42) |
+

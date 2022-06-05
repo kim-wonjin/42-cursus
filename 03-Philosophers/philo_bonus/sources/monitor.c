@@ -6,7 +6,7 @@
 /*   By: wokim <wokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:02:42 by wokim             #+#    #+#             */
-/*   Updated: 2022/04/26 20:02:44 by wokim            ###   ########.fr       */
+/*   Updated: 2022/05/19 22:30:37 by wokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,17 @@ void	*monitor_death(void *ptr_info)
 	info = (t_info *)ptr_info;
 	if (timestamp(&cur) == false)
 		sem_post(info->sem_dining);
-	wait_interval(info, cur, info->time_die - EPSILON);
+	wait_interval(info, cur, info->time_die / 2);
 	while (1)
 	{
 		if (timestamp(&cur) == false)
 			sem_post(info->sem_dining);
-		if (cur - info->philo[info->i].cur > (long long)info->time_die)
+		if (cur - info->philo[info->i].cur >= (long long)info->time_die)
 		{
 			print_status(info, DIED);
 			sem_post(info->sem_dining);
 		}
+		usleep(5000);
 	}
 	return (NULL);
 }

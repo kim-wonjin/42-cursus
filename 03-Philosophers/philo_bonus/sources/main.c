@@ -6,7 +6,7 @@
 /*   By: wokim <wokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:02:35 by wokim             #+#    #+#             */
-/*   Updated: 2022/04/26 20:02:38 by wokim            ###   ########.fr       */
+/*   Updated: 2022/05/19 22:32:35 by wokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	routine(t_info *info)
 	if (timestamp(&info->philo[info->i].cur) == false)
 		sem_post(info->sem_dining);
 	if (info->i % 2)
-		wait_interval(info, info->philo[info->i].cur, 10 * EPSILON);
+		wait_interval(info, info->philo[info->i].cur, 1);
 	while (1)
 	{
 		take_fork(info);

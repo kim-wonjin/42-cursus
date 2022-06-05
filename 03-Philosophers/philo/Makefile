@@ -6,7 +6,7 @@
 #    By: wokim <wokim@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 20:01:45 by wokim             #+#    #+#              #
-#    Updated: 2022/04/26 20:01:47 by wokim            ###   ########.fr        #
+#    Updated: 2022/05/19 19:17:06 by wokim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,4 +69,6 @@ fclean		:	clean
 				@echo "$(NAME): $(RED)$(NAME) was deleted$(EOC)"
 
 .PHONY		:	re
-re			:	fclean all
+re			:
+	$(MAKE) fclean
+	$(MAKE) all

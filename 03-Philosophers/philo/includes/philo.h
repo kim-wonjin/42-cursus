@@ -6,7 +6,7 @@
 /*   By: wokim <wokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:59:59 by wokim             #+#    #+#             */
-/*   Updated: 2022/04/26 20:00:02 by wokim            ###   ########.fr       */
+/*   Updated: 2022/05/19 21:15:23 by wokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <errno.h>
 # include <stdio.h>
 
-# define EPSILON	10
+# define EPSILON	1000
 # define MILLI		1000
 # define ERROR		-1
 

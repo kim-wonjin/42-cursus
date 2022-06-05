@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: wokim <wokim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:00:49 by wokim             #+#    #+#             */
-/*   Updated: 2022/05/18 21:28:23 by kim-wonjin       ###   ########.fr       */
+/*   Updated: 2022/05/19 21:31:23 by wokim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,8 @@ static void	*routine(void *ptr_ith_philo)
 	t_philo	*philo;
 
 	philo = (t_philo *)ptr_ith_philo;
-	if (timestamp(&philo->cur) == false)
-		pthread_mutex_unlock(&philo->info->dining);
 	if (philo->i % 2)
-		wait_interval(philo, philo->cur, 10 * EPSILON);
+		wait_interval(philo, philo->cur, 1);
 	while (1)
 	{
 		take_fork(philo);
@@ -66,7 +64,7 @@ static void	*monitor(void *ptr_ith_philo)
 	philo = (t_philo *)ptr_ith_philo;
 	if (timestamp(&cur) == false)
 		pthread_mutex_unlock(&philo->info->dining);
-	wait_interval(philo, cur, philo->info->time_die - EPSILON);
+	wait_interval(philo, cur, philo->info->time_die / 2);
 	while (1)
 	{
 		if (timestamp(&cur) == false)
@@ -76,6 +74,7 @@ static void	*monitor(void *ptr_ith_philo)
 			print_status(DIED, philo);
 			pthread_mutex_unlock(&philo->info->dining);
 		}
+		usleep(5000);
 	}
 	return (NULL);
 }
@@ -94,6 +93,8 @@ static bool	feed_philo(t_info *info, t_philo *philo)
 		philo[i].info = info;
 		philo[i].l = i;
 		philo[i].r = (i + 1) % info->nbr_philo;
+		if (timestamp(&philo[i].cur) == false)
+			pthread_mutex_unlock(&philo->info->dining);
 		if (pthread_create(&philo[i].routine, NULL, routine, &philo[i]) || \
 			pthread_detach(philo[i].routine))
 			return (false);

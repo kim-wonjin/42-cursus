@@ -6,7 +6,7 @@
 /*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 20:45:32 by sshin             #+#    #+#             */
-/*   Updated: 2022/06/27 00:14:47 by kim-wonjin       ###   ########.fr       */
+/*   Updated: 2022/06/28 15:32:59 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ static int	ft_split_cnt(char const *s, const char c)
 		}
 		s++;
 	}
-	return (begin == 0 ? cnt : cnt + 1);
+	if (begin == 0)
+		return (cnt);
+	return (cnt + 1);
 }
 
 int	ft_word_len(char const *s, const char c)

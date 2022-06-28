@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshin <sshin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 20:47:19 by sshin             #+#    #+#             */
-/*   Updated: 2022/02/11 14:54:38 by sshin            ###   ########.fr       */
+/*   Updated: 2022/06/28 15:50:52 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int		ft_export(t_cmd *cmd_list, char ***envp, int fd);
 */
 
 void	print_errstr(t_cmd *cmd_list);
+void	print_errstr2(t_cmd *cmd_list);
 void	error_write(char *error_str, char *err_cmdline, char *err_cmdline2);
 void	print_errstr3(t_cmd *cmd_list);
 

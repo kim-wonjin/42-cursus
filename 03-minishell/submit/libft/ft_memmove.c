@@ -6,10 +6,11 @@
 /*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 20:45:08 by sshin             #+#    #+#             */
-/*   Updated: 2022/06/27 00:13:33 by kim-wonjin       ###   ########.fr       */
+/*   Updated: 2022/06/28 15:30:28 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -41,3 +42,4 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+*/

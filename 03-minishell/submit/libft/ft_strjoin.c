@@ -6,7 +6,7 @@
 /*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 20:45:45 by sshin             #+#    #+#             */
-/*   Updated: 2022/06/27 00:15:50 by kim-wonjin       ###   ########.fr       */
+/*   Updated: 2022/06/28 15:32:12 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 && !s2)
 		return (NULL);
-	if (!s1 || !s2)
-		return (!s1 ? ft_strdup(s2) : ft_strdup(s1));
+	if (!s1)
+		return (ft_strdup(s2));
+	else if (!s2)
+		return (ft_strdup(s1));
 	i = 0;
 	j = 0;
 	ft_length(&i, &j, s1, s2);

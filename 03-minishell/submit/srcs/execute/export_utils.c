@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshin <sshin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 20:40:54 by sshin             #+#    #+#             */
-/*   Updated: 2022/02/11 16:30:36 by sshin            ###   ########.fr       */
+/*   Updated: 2022/06/28 17:45:41 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int	isvalid_export(char *line)
 
 	i = 0;
 	str_arr = ft_split(line, '=');
+	if (*str_arr == NULL)
+		return (0);
 	key = str_arr[0];
 	ret = ft_valid_key(key);
 	while (str_arr[i])

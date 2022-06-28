@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshin <sshin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kim-wonjin <kim-wonjin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 20:40:48 by sshin             #+#    #+#             */
-/*   Updated: 2022/02/11 19:00:35 by sshin            ###   ########.fr       */
+/*   Updated: 2022/06/28 16:01:50 by kim-wonjin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,8 +142,8 @@ int	exec(t_cmd *cmd_list, char *argv[], char **envp[])
 		print_errstr(cmd_list);
 	else if (tmp == 1)
 		g_exit_status = 0;
-	dup2(100, STDIN);
-	dup2(101, STDOUT);
+	dup2(101, STDIN);
+	dup2(100, STDOUT);
 	if (cmd_list->pipe_flag == 1)
 	{
 		pid = fork();
